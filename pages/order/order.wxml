@@ -1,0 +1,87 @@
+<!--pages/order/order.wxml-->
+<view class="order-container">
+  <!-- 产品信息 -->
+  <view class="product-section">
+    <text class="section-title">产品信息</text>
+    <view class="product-info">
+      <view class="product-image">
+        <text class="image-placeholder">💊</text>
+      </view>
+      <view class="product-details">
+        <text class="product-name">{{product.name}}</text>
+        <text class="product-price">¥{{product.price}}/盒</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 订购信息 -->
+  <view class="order-form">
+    <text class="section-title">订购信息</text>
+    
+    <view class="form-group">
+      <view class="input-item">
+        <text class="input-label">收货人</text>
+        <input class="input-field" placeholder="请输入收货人姓名" 
+               value="{{formData.name}}" bindinput="onInputChange" data-field="name" />
+      </view>
+      <view class="input-item">
+        <text class="input-label">联系电话</text>
+        <input class="input-field" placeholder="请输入联系电话" type="number"
+               value="{{formData.phone}}" bindinput="onInputChange" data-field="phone" />
+      </view>
+      <view class="input-item">
+        <text class="input-label">收货地址</text>
+        <textarea class="textarea-field" placeholder="请输入详细收货地址" 
+                  value="{{formData.address}}" bindinput="onInputChange" data-field="address"
+                  maxlength="100" show-count></textarea>
+      </view>
+    </view>
+
+    <view class="form-group">
+      <view class="quantity-item">
+        <text class="quantity-label">购买数量</text>
+        <view class="quantity-control">
+          <button class="quantity-btn" bindtap="decreaseQuantity">-</button>
+          <text class="quantity-value">{{formData.quantity}}</text>
+          <button class="quantity-btn" bindtap="increaseQuantity">+</button>
+        </view>
+      </view>
+    </view>
+
+    <view class="form-group">
+      <view class="input-item">
+        <text class="input-label">备注信息</text>
+        <textarea class="textarea-field" placeholder="请输入备注信息（可选）" 
+                  value="{{formData.remark}}" bindinput="onInputChange" data-field="remark"
+                  maxlength="200" show-count></textarea>
+      </view>
+    </view>
+  </view>
+
+  <!-- 订单汇总 -->
+  <view class="order-summary">
+    <view class="summary-item">
+      <text class="summary-label">商品金额</text>
+      <text class="summary-value">¥{{product.price * formData.quantity}}</text>
+    </view>
+    <view class="summary-item">
+      <text class="summary-label">运费</text>
+      <text class="summary-value">¥0</text>
+    </view>
+    <view class="summary-total">
+      <text class="total-label">合计</text>
+      <text class="total-value">¥{{totalPrice}}</text>
+    </view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="action-bar">
+    <view class="total-price">
+      <text class="price-label">总计：</text>
+      <text class="price-value">¥{{totalPrice}}</text>
+    </view>
+    <button class="submit-btn" bindtap="submitOrder" disabled="{{!canSubmit}}">
+      提交订单
+    </button>
+  </view>
+</view>

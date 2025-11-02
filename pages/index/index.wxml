@@ -1,0 +1,87 @@
+<!--pages/index/index.wxml-->
+<view class="index-container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="header-content">
+      <view class="logo">
+        <view class="logo-icon">骨</view>
+        <view class="logo-text">
+          <text class="logo-title">骨健康e站通</text>
+          <text class="logo-subtitle">科学护骨，健康生活</text>
+        </view>
+      </view>
+      <view class="user-info" bindtap="navigateToProfile">
+        <view class="avatar">{{userInfo.avatar}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能导航 -->
+  <view class="nav-grid">
+    <view class="nav-item" bindtap="navigateToAssessment">
+      <view class="nav-icon risk-icon">📊</view>
+      <text class="nav-text">风险自测</text>
+    </view>
+    <view class="nav-item" bindtap="navigateToKnowledge">
+      <view class="nav-icon knowledge-icon">📚</view>
+      <text class="nav-text">健康科普</text>
+    </view>
+    <view class="nav-item" bindtap="navigateToIntervention">
+      <view class="nav-icon intervention-icon">💊</view>
+      <text class="nav-text">干预方案</text>
+    </view>
+  </view>
+
+  <!-- 风险自评卡片 -->
+  <view class="section">
+    <view class="risk-card">
+      <view class="risk-content">
+        <view class="risk-text">
+          <text class="risk-title">骨质疏松风险自评</text>
+          <text class="risk-desc">1分钟快速评估您的骨骼健康状况</text>
+        </view>
+        <button class="start-btn" bindtap="navigateToAssessment">开始评估</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 健康科普 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">健康科普</text>
+    </view>
+    <view class="article-list">
+      <block wx:for="{{articles}}" wx:key="id">
+        <view class="article-item" bindtap="viewArticle" data-article="{{item}}">
+          <view class="article-content">
+            <text class="article-title">{{item.title}}</text>
+            <view class="article-meta">
+              <text class="article-category">{{item.category}}</text>
+              <text class="article-read">阅读 {{item.readCount}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 服务动态 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">服务动态</text>
+    </view>
+    <view class="activity-list">
+      <block wx:for="{{activities}}" wx:key="id">
+        <view class="activity-item">
+          <view class="activity-content">
+            <text class="activity-title">{{item.title}}</text>
+            <view class="activity-meta">
+              <text class="activity-category">{{item.category}}</text>
+              <text class="activity-time">{{item.time}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,40 @@
+<!--pages/assessment/assessment.wxml-->
+<view class="assessment-container">
+  <view class="progress-bar">
+    <view class="progress" style="width: {{progress}}"></view>
+  </view>
+  
+  <view class="question-section" wx:if="{{!showResult}}">
+    <text class="question-title">问题 {{currentIndex + 1}}/{{questions.length}}</text>
+    <text class="question-text">{{currentQuestion.text}}</text>
+    
+    <view class="options">
+      <block wx:for="{{currentQuestion.options}}" wx:key="id">
+        <view class="option-item" bindtap="selectOption" data-option="{{item}}">
+          <text class="option-text">{{item.text}}</text>
+          <text class="option-score" wx:if="{{item.score > 0}}">({{item.score}}分)</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card {{result.level}}">
+      <text class="result-title">骨质疏松风险评估结果</text>
+      <view class="result-score">得分: {{result.totalScore}}</view>
+      <view class="result-level {{result.level}}">{{result.levelName}}</view>
+      <text class="result-desc">{{result.description}}</text>
+      
+      <view class="suggestions">
+        <text class="suggestion-title">健康建议：</text>
+        <text class="suggestion-item" wx:for="{{result.suggestions}}" wx:key="*this">{{item}}</text>
+      </view>
+      
+      <view class="action-buttons">
+        <button class="save-btn" bindtap="saveResult">保存评估结果</button>
+        <button class="again-btn" bindtap="startAgain">重新评估</button>
+        <button class="records-btn" bindtap="viewRecords">查看历史记录</button>
+      </view>
+    </view>
+  </view>
+</view>

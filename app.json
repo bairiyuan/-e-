@@ -1,0 +1,45 @@
+{
+    "pages": [
+      "pages/index/index",
+      "pages/logs/logs",
+      "pages/products/products",
+      "pages/profile/profile",
+      "pages/assessment/assessment",
+      "pages/article/article",
+      "pages/product-detail/product-detail",
+      "pages/order/order",
+      "pages/records/records",
+      "pages/about/about",
+      "pages/intervention/intervention",
+      "pages/my-plans/my-plans"
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#1a73e8",
+      "navigationBarTitleText": "骨健康e站通",
+      "navigationBarTextStyle": "white",
+      "enablePullDownRefresh": true
+    },
+    "tabBar": {
+      "color": "#999999",
+      "selectedColor": "#1a73e8",
+      "backgroundColor": "#ffffff",
+      "borderStyle": "black",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/products/products",
+          "text": "产品"
+        },
+        {
+          "pagePath": "pages/profile/profile",
+          "text": "我的"
+        }
+      ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+  }

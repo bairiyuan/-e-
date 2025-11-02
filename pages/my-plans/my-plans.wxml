@@ -1,0 +1,47 @@
+<!--pages/my-plans/my-plans.wxml-->
+<view class="plans-container">
+  <view class="plans-header">
+    <text class="header-title">我的方案</text>
+    <text class="header-desc">共{{plans.length}}个保存的方案</text>
+  </view>
+
+  <view class="plans-list">
+    <block wx:for="{{plans}}" wx:key="id">
+      <view class="plan-item {{item.level}}" bindtap="viewPlanDetail" data-plan="{{item}}">
+        <view class="plan-header">
+          <text class="plan-date">{{item.createDate}}</text>
+          <text class="plan-level {{item.level}}">{{item.levelName}}</text>
+        </view>
+        <view class="plan-content">
+          <text class="plan-score">评估得分：{{item.totalScore}}</text>
+          <text class="plan-desc">{{item.description}}</text>
+        </view>
+        <view class="plan-stats">
+          <view class="stat">
+            <text class="stat-number">{{item.dietPlan.length}}</text>
+            <text class="stat-label">饮食建议</text>
+          </view>
+          <view class="stat">
+            <text class="stat-number">{{item.exercisePlan.length}}</text>
+            <text class="stat-label">运动方案</text>
+          </view>
+          <view class="stat">
+            <text class="stat-number">{{item.lifestylePlan.length}}</text>
+            <text class="stat-label">生活习惯</text>
+          </view>
+        </view>
+        <view class="plan-actions">
+          <button class="action-btn delete" bindtap="deletePlan" data-id="{{item.id}}" catchtap>删除</button>
+          <button class="action-btn share" bindtap="sharePlan" data-plan="{{item}}" catchtap>分享</button>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="empty-state" wx:if="{{plans.length === 0}}">
+    <text class="empty-icon">📋</text>
+    <text class="empty-text">暂无保存的方案</text>
+    <text class="empty-desc">快去制定个性化干预方案吧！</text>
+    <button class="empty-btn" bindtap="goToIntervention">制定方案</button>
+  </view>
+</view>

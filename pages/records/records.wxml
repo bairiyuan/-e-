@@ -1,0 +1,54 @@
+<!--pages/records/records.wxml-->
+<view class="records-container">
+  <view class="records-header">
+    <text class="header-title">风险评估记录</text>
+    <text class="header-desc">共{{assessments.length}}次评估</text>
+  </view>
+
+  <view class="records-list">
+    <block wx:for="{{assessments}}" wx:key="id">
+      <view class="record-item {{item.level}}" bindtap="viewRecordDetail" data-record="{{item}}">
+        <view class="record-header">
+          <text class="record-date">{{item.date}}</text>
+          <text class="record-level {{item.level}}">{{item.levelName}}</text>
+        </view>
+        <view class="record-content">
+          <text class="record-score">得分：{{item.totalScore}}</text>
+          <text class="record-desc">{{item.description}}</text>
+        </view>
+        <view class="record-actions">
+          <button class="delete-btn" bindtap="deleteRecord" data-id="{{item.id}}" catchtap>删除</button>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="empty-state" wx:if="{{assessments.length === 0}}">
+    <text class="empty-icon">📊</text>
+    <text class="empty-text">暂无评估记录</text>
+    <text class="empty-desc">快去进行风险评估吧！</text>
+    <button class="empty-btn" bindtap="goToAssessment">开始评估</button>
+  </view>
+
+  <view class="stats-section" wx:if="{{assessments.length > 0}}">
+    <text class="stats-title">评估统计</text>
+    <view class="stats-grid">
+      <view class="stat-card">
+        <text class="stat-number">{{assessments.length}}</text>
+        <text class="stat-label">总评估次数</text>
+      </view>
+      <view class="stat-card">
+        <text class="stat-number">{{latestScore}}</text>
+        <text class="stat-label">最新得分</text>
+      </view>
+      <view class="stat-card">
+        <text class="stat-number">{{riskLevelCount.low}}</text>
+        <text class="stat-label">低风险</text>
+      </view>
+      <view class="stat-card">
+        <text class="stat-number">{{riskLevelCount.medium + riskLevelCount.high}}</text>
+        <text class="stat-label">中高风险</text>
+      </view>
+    </view>
+  </view>
+</view>

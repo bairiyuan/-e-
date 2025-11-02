@@ -1,0 +1,67 @@
+<!--pages/product-detail/product-detail.wxml-->
+<view class="product-detail-container">
+  <!-- 产品头部 -->
+  <view class="product-header">
+    <view class="product-image">
+      <text class="image-placeholder">💊</text>
+    </view>
+    <view class="product-basic-info">
+      <text class="product-name">{{product.name}}</text>
+      <text class="product-desc">{{product.description}}</text>
+      <view class="product-price">
+        <text class="current-price">¥{{product.price}}</text>
+        <text class="original-price">¥{{product.originalPrice}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 产品详情 -->
+  <view class="detail-section">
+    <text class="section-title">产品详情</text>
+    <view class="detail-list">
+      <view class="detail-item">
+        <text class="detail-label">主要成分</text>
+        <text class="detail-value">{{product.details.ingredients}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">服用方法</text>
+        <text class="detail-value">{{product.details.usage}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">产品规格</text>
+        <text class="detail-value">{{product.details.specification}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">适宜人群</text>
+        <text class="detail-value">{{product.details.suitable}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">贮藏方法</text>
+        <text class="detail-value">{{product.details.storage}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="detail-label">有效期</text>
+        <text class="detail-value">{{product.details.validity}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 产品特点 -->
+  <view class="features-section">
+    <text class="section-title">产品特点</text>
+    <view class="features-list">
+      <block wx:for="{{product.features}}" wx:key="*this">
+        <view class="feature-item">
+          <text class="feature-icon">✓</text>
+          <text class="feature-text">{{item}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="action-bar">
+    <button class="cart-btn" bindtap="addToCart">加入购物车</button>
+    <button class="buy-btn" bindtap="placeOrder">立即购买</button>
+  </view>
+</view>

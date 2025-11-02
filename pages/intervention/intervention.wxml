@@ -1,0 +1,125 @@
+<!--pages/intervention/intervention.wxml-->
+<view class="intervention-container">
+  <!-- 头部 -->
+  <view class="header">
+    <text class="header-title">个性化干预方案</text>
+    <text class="header-desc">基于您的风险评估结果制定</text>
+  </view>
+
+  <!-- 风险评估结果 -->
+  <view class="assessment-result" wx:if="{{latestAssessment}}">
+    <view class="result-card {{latestAssessment.level}}">
+      <text class="result-title">最新评估结果</text>
+      <view class="result-info">
+        <text class="result-level">{{latestAssessment.levelName}}</text>
+        <text class="result-score">得分：{{latestAssessment.totalScore}}</text>
+      </view>
+      <text class="result-date">{{latestAssessment.date}}</text>
+    </view>
+  </view>
+
+  <!-- 无评估记录提示 -->
+  <view class="no-assessment" wx:if="{{!latestAssessment}}">
+    <view class="empty-state">
+      <text class="empty-icon">📊</text>
+      <text class="empty-text">暂无评估记录</text>
+      <text class="empty-desc">请先完成风险评估获取个性化方案</text>
+      <button class="assessment-btn" bindtap="goToAssessment">开始评估</button>
+    </view>
+  </view>
+
+  <!-- 干预方案内容 -->
+  <view class="intervention-content" wx:if="{{latestAssessment}}">
+    <!-- 饮食建议 -->
+    <view class="plan-section">
+      <view class="section-header">
+        <text class="section-icon">🍎</text>
+        <text class="section-title">饮食建议</text>
+      </view>
+      <view class="plan-list">
+        <block wx:for="{{dietPlan}}" wx:key="id">
+          <view class="plan-item">
+            <text class="plan-icon">✓</text>
+            <text class="plan-text">{{item.content}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 运动方案 -->
+    <view class="plan-section">
+      <view class="section-header">
+        <text class="section-icon">🏃</text>
+        <text class="section-title">运动方案</text>
+      </view>
+      <view class="plan-list">
+        <block wx:for="{{exercisePlan}}" wx:key="id">
+          <view class="plan-item">
+            <text class="plan-icon">✓</text>
+            <text class="plan-text">{{item.content}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 生活习惯 -->
+    <view class="plan-section">
+      <view class="section-header">
+        <text class="section-icon">🌞</text>
+        <text class="section-title">生活习惯</text>
+      </view>
+      <view class="plan-list">
+        <block wx:for="{{lifestylePlan}}" wx:key="id">
+          <view class="plan-item">
+            <text class="plan-icon">✓</text>
+            <text class="plan-text">{{item.content}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 产品推荐 -->
+    <view class="plan-section">
+      <view class="section-header">
+        <text class="section-icon">💊</text>
+        <text class="section-title">产品推荐</text>
+      </view>
+      <view class="product-recommendation">
+        <view class="product-card" bindtap="goToProduct">
+          <view class="product-image">
+            <text class="image-placeholder">💊</text>
+          </view>
+          <view class="product-info">
+            <text class="product-name">骨固元乌药口服液</text>
+            <text class="product-desc">科学配方，专业护骨，适合{{latestAssessment.levelName}}人群</text>
+            <view class="product-price">
+              <text class="current-price">¥198</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 监测建议 -->
+    <view class="plan-section">
+      <view class="section-header">
+        <text class="section-icon">📋</text>
+        <text class="section-title">监测建议</text>
+      </view>
+      <view class="plan-list">
+        <block wx:for="{{monitoringPlan}}" wx:key="id">
+          <view class="plan-item">
+            <text class="plan-icon">📅</text>
+            <text class="plan-text">{{item.content}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部操作 -->
+  <view class="action-section" wx:if="{{latestAssessment}}">
+    <button class="save-btn" bindtap="savePlan">保存方案</button>
+    <button class="share-btn" bindtap="sharePlan">分享方案</button>
+  </view>
+</view>

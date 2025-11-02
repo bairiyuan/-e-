@@ -1,0 +1,60 @@
+<!--pages/products/products.wxml-->
+<view class="products-container">
+  <view class="product-header">
+    <text class="header-title">骨固元系列产品</text>
+    <text class="header-desc">科学配方，专业护骨</text>
+  </view>
+
+  <view class="product-list">
+    <view class="product-card" bindtap="viewProductDetail" data-product="{{product}}">
+      <view class="product-image">
+        <text class="image-placeholder">💊</text>
+      </view>
+      <view class="product-info">
+        <text class="product-name">{{product.name}}</text>
+        <text class="product-desc">{{product.description}}</text>
+        <view class="product-price">
+          <text class="current-price">¥{{product.price}}</text>
+          <text class="original-price">¥{{product.originalPrice}}</text>
+        </view>
+        <view class="product-tags">
+          <text class="tag">科学配方</text>
+          <text class="tag">专业护骨</text>
+          <text class="tag">易于吸收</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="product-features">
+    <view class="feature-section">
+      <text class="section-title">产品特点</text>
+      <view class="features-grid">
+        <view class="feature-item">
+          <text class="feature-icon">🔬</text>
+          <text class="feature-title">科学研发</text>
+          <text class="feature-desc">基于乌药抗骨质疏松研究成果</text>
+        </view>
+        <view class="feature-item">
+          <text class="feature-icon">🛡️</text>
+          <text class="feature-title">专业护骨</text>
+          <text class="feature-desc">有效增强骨密度</text>
+        </view>
+        <view class="feature-item">
+          <text class="feature-icon">💪</text>
+          <text class="feature-title">易于吸收</text>
+          <text class="feature-desc">特殊配方提高吸收率</text>
+        </view>
+        <view class="feature-item">
+          <text class="feature-icon">✅</text>
+          <text class="feature-title">安全可靠</text>
+          <text class="feature-desc">无添加，临床验证</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-section">
+    <button class="order-btn" bindtap="placeOrder">立即订购</button>
+  </view>
+</view>

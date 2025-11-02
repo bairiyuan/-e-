@@ -1,0 +1,35 @@
+<!--pages/article/article.wxml-->
+<view class="article-container">
+  <view class="article-header">
+    <text class="article-title">{{article.title}}</text>
+    <view class="article-meta">
+      <text class="article-category">{{article.category}}</text>
+      <text class="article-read">阅读 {{article.readCount}}</text>
+      <text class="article-time">{{article.publishTime}}</text>
+    </view>
+  </view>
+  
+  <view class="article-content">
+    <text class="content-text">{{article.content}}</text>
+    
+    <view class="content-section" wx:if="{{article.sections}}">
+      <block wx:for="{{article.sections}}" wx:key="title">
+        <view class="section">
+          <text class="section-title">{{item.title}}</text>
+          <text class="section-content">{{item.content}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="article-actions">
+    <view class="action-item" bindtap="toggleCollection">
+      <text class="action-icon">{{isCollected ? '❤️' : '🤍'}}</text>
+      <text class="action-text">{{isCollected ? '已收藏' : '收藏'}}</text>
+    </view>
+    <view class="action-item" bindtap="shareArticle">
+      <text class="action-icon">📤</text>
+      <text class="action-text">分享</text>
+    </view>
+  </view>
+</view>

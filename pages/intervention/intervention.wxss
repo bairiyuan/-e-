@@ -1,0 +1,269 @@
+/* pages/intervention/intervention.wxss */
+.intervention-container {
+    padding: 30rpx;
+    background: #f5f5f5;
+    min-height: 100vh;
+    padding-bottom: 140rpx;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40rpx;
+  }
+  
+  .header-title {
+    display: block;
+    font-size: 36rpx;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12rpx;
+  }
+  
+  .header-desc {
+    display: block;
+    font-size: 26rpx;
+    color: #666;
+  }
+  
+  .assessment-result {
+    margin-bottom: 40rpx;
+  }
+  
+  .result-card {
+    background: white;
+    border-radius: 20rpx;
+    padding: 40rpx;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .result-card.low {
+    border-left: 8rpx solid #52c41a;
+  }
+  
+  .result-card.medium {
+    border-left: 8rpx solid #faad14;
+  }
+  
+  .result-card.high {
+    border-left: 8rpx solid #ff4d4f;
+  }
+  
+  .result-title {
+    display: block;
+    font-size: 28rpx;
+    color: #666;
+    margin-bottom: 20rpx;
+  }
+  
+  .result-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16rpx;
+  }
+  
+  .result-level {
+    font-size: 32rpx;
+    font-weight: 600;
+  }
+  
+  .result-card.low .result-level {
+    color: #52c41a;
+  }
+  
+  .result-card.medium .result-level {
+    color: #faad14;
+  }
+  
+  .result-card.high .result-level {
+    color: #ff4d4f;
+  }
+  
+  .result-score {
+    font-size: 24rpx;
+    color: #666;
+  }
+  
+  .result-date {
+    display: block;
+    font-size: 22rpx;
+    color: #999;
+  }
+  
+  .no-assessment {
+    background: white;
+    border-radius: 20rpx;
+    padding: 60rpx 40rpx;
+    margin-bottom: 40rpx;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .empty-icon {
+    font-size: 80rpx;
+    display: block;
+    margin-bottom: 20rpx;
+  }
+  
+  .empty-text {
+    display: block;
+    font-size: 28rpx;
+    color: #666;
+    margin-bottom: 12rpx;
+  }
+  
+  .empty-desc {
+    display: block;
+    font-size: 24rpx;
+    color: #999;
+    margin-bottom: 30rpx;
+  }
+  
+  .assessment-btn {
+    background: #1a73e8;
+    color: white;
+    border: none;
+    padding: 20rpx 40rpx;
+    border-radius: 12rpx;
+    font-size: 28rpx;
+  }
+  
+  .intervention-content {
+    margin-bottom: 40rpx;
+  }
+  
+  .plan-section {
+    background: white;
+    border-radius: 20rpx;
+    padding: 40rpx;
+    margin-bottom: 30rpx;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30rpx;
+  }
+  
+  .section-icon {
+    font-size: 36rpx;
+    margin-right: 16rpx;
+  }
+  
+  .section-title {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .plan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+  }
+  
+  .plan-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16rpx;
+  }
+  
+  .plan-icon {
+    color: #52c41a;
+    font-size: 24rpx;
+    margin-top: 8rpx;
+  }
+  
+  .plan-text {
+    font-size: 26rpx;
+    color: #666;
+    line-height: 1.5;
+    flex: 1;
+  }
+  
+  .product-recommendation {
+    margin-top: 20rpx;
+  }
+  
+  .product-card {
+    display: flex;
+    gap: 24rpx;
+    padding: 30rpx;
+    background: #f8f9fa;
+    border-radius: 16rpx;
+    border: 2rpx solid #e8e8e8;
+  }
+  
+  .product-image {
+    width: 120rpx;
+    height: 120rpx;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 12rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image-placeholder {
+    font-size: 48rpx;
+    color: white;
+  }
+  
+  .product-info {
+    flex: 1;
+  }
+  
+  .product-name {
+    display: block;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8rpx;
+  }
+  
+  .product-desc {
+    display: block;
+    font-size: 24rpx;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 12rpx;
+  }
+  
+  .current-price {
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #ff6b6b;
+  }
+  
+  .action-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20rpx 30rpx;
+    display: flex;
+    gap: 20rpx;
+    border-top: 1rpx solid #f0f0f0;
+  }
+  
+  .save-btn, .share-btn {
+    flex: 1;
+    border: none;
+    padding: 24rpx;
+    border-radius: 12rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+  }
+  
+  .save-btn {
+    background: #1a73e8;
+    color: white;
+  }
+  
+  .share-btn {
+    background: #52c41a;
+    color: white;
+  }

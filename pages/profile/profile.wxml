@@ -1,0 +1,56 @@
+<!--pages/profile/profile.wxml-->
+<view class="profile-container">
+  <!-- 用户信息 -->
+  <view class="user-card">
+    <view class="user-avatar">{{userInfo.avatar}}</view>
+    <view class="user-info">
+      <text class="user-name">{{userInfo.name}}</text>
+      <text class="user-desc">欢迎使用骨健康e站通</text>
+    </view>
+  </view>
+
+  <!-- 数据统计 -->
+  <view class="stats-section">
+    <view class="stat-item" bindtap="viewAssessmentRecords">
+      <text class="stat-number">{{assessmentCount}}</text>
+      <text class="stat-label">风险评估</text>
+    </view>
+    <view class="stat-item" bindtap="viewMyPlans">
+      <text class="stat-number">{{planCount}}</text>
+      <text class="stat-label">我的方案</text>
+    </view>
+    <view class="stat-item" bindtap="viewOrders">
+      <text class="stat-number">{{orderCount}}</text>
+      <text class="stat-label">我的订单</text>
+    </view>
+  </view>
+
+  <!-- 功能菜单 -->
+  <view class="menu-section">
+    <view class="menu-item" bindtap="viewAssessmentRecords">
+      <view class="menu-icon">📊</view>
+      <text class="menu-text">风险评估记录</text>
+      <view class="menu-arrow">></view>
+    </view>
+    <view class="menu-item" bindtap="viewMyPlans">
+      <view class="menu-icon">📋</view>
+      <text class="menu-text">我的方案</text>
+      <view class="menu-arrow">></view>
+    </view>
+    <view class="menu-item" bindtap="viewOrders">
+      <view class="menu-icon">📦</view>
+      <text class="menu-text">我的订单</text>
+      <view class="menu-arrow">></view>
+    </view>
+    <view class="menu-item" bindtap="viewAbout">
+      <view class="menu-icon">ℹ️</view>
+      <text class="menu-text">关于我们</text>
+      <view class="menu-arrow">></view>
+    </view>
+  </view>
+
+  <!-- 退出登录 -->
+  <view class="logout-section">
+    <button class="logout-btn" bindtap="logout">退出登录</button>
+  </view>
+</view>
