@@ -2,7 +2,7 @@
 <view class="products-container">
   <view class="product-header">
     <text class="header-title">骨固元系列产品</text>
-    <text class="header-desc">科学配方，专业护骨</text>
+    <text class="header-desc">专利技术，科学护骨</text>
   </view>
 
   <view class="product-list">
@@ -15,12 +15,11 @@
         <text class="product-desc">{{product.description}}</text>
         <view class="product-price">
           <text class="current-price">¥{{product.price}}</text>
-          <text class="original-price">¥{{product.originalPrice}}</text>
         </view>
         <view class="product-tags">
-          <text class="tag">科学配方</text>
-          <text class="tag">专业护骨</text>
-          <text class="tag">易于吸收</text>
+          <text class="tag">专利技术</text>
+          <text class="tag">口服液剂型</text>
+          <text class="tag">普惠定价</text>
         </view>
       </view>
     </view>
@@ -32,25 +31,32 @@
       <view class="features-grid">
         <view class="feature-item">
           <text class="feature-icon">🔬</text>
-          <text class="feature-title">科学研发</text>
+          <text class="feature-title">专利技术</text>
           <text class="feature-desc">基于乌药抗骨质疏松研究成果</text>
         </view>
         <view class="feature-item">
-          <text class="feature-icon">🛡️</text>
-          <text class="feature-title">专业护骨</text>
-          <text class="feature-desc">有效增强骨密度</text>
+          <text class="feature-icon">💧</text>
+          <text class="feature-title">口服液剂型</text>
+          <text class="feature-desc">易于吸收，服用方便</text>
         </view>
         <view class="feature-item">
-          <text class="feature-icon">💪</text>
-          <text class="feature-title">易于吸收</text>
-          <text class="feature-desc">特殊配方提高吸收率</text>
+          <text class="feature-icon">💰</text>
+          <text class="feature-title">普惠定价</text>
+          <text class="feature-desc">98元，服务社区健康</text>
         </view>
         <view class="feature-item">
-          <text class="feature-icon">✅</text>
-          <text class="feature-title">安全可靠</text>
-          <text class="feature-desc">无添加，临床验证</text>
+          <text class="feature-icon">🏥</text>
+          <text class="feature-title">专业服务</text>
+          <text class="feature-desc">完整健康服务体系支持</text>
         </view>
       </view>
+    </view>
+  </view>
+
+  <view class="suitable-section">
+    <view class="suitable-card">
+      <text class="suitable-title">适用人群</text>
+      <text class="suitable-content">{{product.suitable}}</text>
     </view>
   </view>
 

@@ -73,9 +73,6 @@
   }
   
   .product-price {
-    display: flex;
-    align-items: center;
-    gap: 16rpx;
     margin-bottom: 20rpx;
   }
   
@@ -83,12 +80,6 @@
     font-size: 36rpx;
     font-weight: 600;
     color: #ff6b6b;
-  }
-  
-  .original-price {
-    font-size: 24rpx;
-    color: #999;
-    text-decoration: line-through;
   }
   
   .product-tags {
@@ -109,7 +100,7 @@
     background: white;
     border-radius: 20rpx;
     padding: 40rpx;
-    margin-bottom: 40rpx;
+    margin-bottom: 30rpx;
     box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
   }
   
@@ -159,6 +150,32 @@
     color: #666;
     text-align: center;
     line-height: 1.4;
+  }
+  
+  .suitable-section {
+    margin-bottom: 40rpx;
+  }
+  
+  .suitable-card {
+    background: white;
+    border-radius: 20rpx;
+    padding: 30rpx;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  }
+  
+  .suitable-title {
+    display: block;
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16rpx;
+  }
+  
+  .suitable-content {
+    display: block;
+    font-size: 26rpx;
+    color: #666;
+    line-height: 1.5;
   }
   
   .action-section {

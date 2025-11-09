@@ -16,6 +16,14 @@ App({
       this.initGlobalData();
     },
   
+    // 版本信息
+    version: {
+      code: '1.2.0',
+      name: 'v1.2.0',
+      description: '新增我的方案功能，支持方案保存和查看',
+      updateTime: '2024-01-15'
+    },
+  
     initGlobalData() {
       let appData = wx.getStorageSync('appData');
       if (!appData) {
@@ -35,31 +43,23 @@ App({
           // 订单记录
           orders: [],
           
-          // 新增：保存的方案
+          // 保存的方案
           savedPlans: [],
           
-          // 产品信息
+          // 产品信息 - 精简版本
           products: [
             {
               id: 1,
               name: '骨固元乌药口服液',
-              price: 198,
-              originalPrice: 258,
-              description: '基于乌药抗骨质疏松研究成果，科学配方，专业护骨',
-              details: {
-                ingredients: '乌药提取物、碳酸钙、维生素D3、胶原蛋白肽',
-                usage: '每日2次，每次1支，饭后服用',
-                specification: '规格：10ml×30支/盒',
-                suitable: '适宜人群：中老年人、骨质疏松风险人群',
-                storage: '贮藏方法：密封，置阴凉干燥处',
-                validity: '有效期：24个月'
-              },
+              price: 98,
+              description: '基于乌药抗骨质疏松专利技术，科学配方改善骨密度',
               features: [
-                '基于乌药抗骨质疏松专利技术',
-                '科学配比，易于吸收',
-                '无添加，安全可靠',
-                '临床验证有效'
-              ]
+                '乌药抗骨质疏松专利技术',
+                '口服液剂型，易于吸收',
+                '普惠定价，服务社区健康',
+                '专业健康服务体系支持'
+              ],
+              suitable: '适宜人群：50岁及以上中老年人、骨质疏松风险人群'
             }
           ],
           
@@ -72,6 +72,22 @@ App({
               readCount: '1.2万',
               content: '钙质是骨骼健康的基础，建议每日摄入足够的奶制品、豆制品和深绿色蔬菜。维生素D有助于钙的吸收，适当晒太阳也很重要。',
               publishTime: '2024-01-10'
+            },
+            {
+              id: 2,
+              title: '适合中老年人的骨骼健康运动',
+              category: '运动康复',
+              readCount: '8千',
+              content: '适度的负重运动如散步、太极等有助于增强骨密度，但要避免剧烈运动防止骨折风险。',
+              publishTime: '2024-01-08'
+            },
+            {
+              id: 3,
+              title: '骨质疏松的早期信号',
+              category: '疾病知识',
+              readCount: '5千',
+              content: '腰背疼痛、身高变矮、容易骨折等都是骨质疏松的早期信号，应及时进行检查。',
+              publishTime: '2024-01-05'
             }
           ],
           
@@ -82,6 +98,18 @@ App({
               title: '社区免费骨密度筛查活动通知',
               category: '活动预告',
               time: '昨天'
+            },
+            {
+              id: 2,
+              title: '"骨舞行动"健康讲座圆满结束',
+              category: '活动回顾',
+              time: '3天前'
+            },
+            {
+              id: 3,
+              title: '春季骨骼健康义诊活动预告',
+              category: '活动预告',
+              time: '1周后'
             }
           ]
         };
@@ -125,7 +153,7 @@ App({
       return order;
     },
   
-    // 新增：保存方案
+    // 保存方案
     savePlan(plan) {
       let appData = this.getAppData();
       if (!appData.savedPlans) appData.savedPlans = [];
@@ -149,13 +177,13 @@ App({
       return plan;
     },
   
-    // 新增：获取保存的方案
+    // 获取保存的方案
     getSavedPlans() {
       const appData = this.getAppData();
       return appData.savedPlans || [];
     },
   
-    // 新增：删除方案
+    // 删除方案
     deletePlan(planId) {
       let appData = this.getAppData();
       if (appData.savedPlans) {

@@ -10,40 +10,14 @@
       <text class="product-desc">{{product.description}}</text>
       <view class="product-price">
         <text class="current-price">¥{{product.price}}</text>
-        <text class="original-price">¥{{product.originalPrice}}</text>
       </view>
     </view>
   </view>
 
-  <!-- 产品详情 -->
+  <!-- 适用人群 -->
   <view class="detail-section">
-    <text class="section-title">产品详情</text>
-    <view class="detail-list">
-      <view class="detail-item">
-        <text class="detail-label">主要成分</text>
-        <text class="detail-value">{{product.details.ingredients}}</text>
-      </view>
-      <view class="detail-item">
-        <text class="detail-label">服用方法</text>
-        <text class="detail-value">{{product.details.usage}}</text>
-      </view>
-      <view class="detail-item">
-        <text class="detail-label">产品规格</text>
-        <text class="detail-value">{{product.details.specification}}</text>
-      </view>
-      <view class="detail-item">
-        <text class="detail-label">适宜人群</text>
-        <text class="detail-value">{{product.details.suitable}}</text>
-      </view>
-      <view class="detail-item">
-        <text class="detail-label">贮藏方法</text>
-        <text class="detail-value">{{product.details.storage}}</text>
-      </view>
-      <view class="detail-item">
-        <text class="detail-label">有效期</text>
-        <text class="detail-value">{{product.details.validity}}</text>
-      </view>
-    </view>
+    <text class="section-title">适用人群</text>
+    <text class="suitable-content">{{product.suitable}}</text>
   </view>
 
   <!-- 产品特点 -->
@@ -56,6 +30,53 @@
           <text class="feature-text">{{item}}</text>
         </view>
       </block>
+    </view>
+  </view>
+
+  <!-- 健康价值 -->
+  <view class="value-section">
+    <text class="section-title">健康价值</text>
+    <view class="value-list">
+      <view class="value-item">
+        <text class="value-icon">🦴</text>
+        <view class="value-content">
+          <text class="value-title">改善骨密度</text>
+          <text class="value-desc">基于乌药专利技术，科学改善骨骼健康</text>
+        </view>
+      </view>
+      <view class="value-item">
+        <text class="value-icon">💪</text>
+        <view class="value-content">
+          <text class="value-title">易于吸收</text>
+          <text class="value-desc">口服液剂型，提高营养成分吸收率</text>
+        </view>
+      </view>
+      <view class="value-item">
+        <text class="value-icon">🏘️</text>
+        <view class="value-content">
+          <text class="value-title">社区普惠</text>
+          <text class="value-desc">普惠定价，服务社区居民骨骼健康</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 服务保障 -->
+  <view class="service-section">
+    <text class="section-title">服务保障</text>
+    <view class="service-list">
+      <view class="service-item">
+        <text class="service-icon">📞</text>
+        <text class="service-text">专业健康咨询服务</text>
+      </view>
+      <view class="service-item">
+        <text class="service-icon">🏥</text>
+        <text class="service-text">社区健康筛查支持</text>
+      </view>
+      <view class="service-item">
+        <text class="service-icon">📚</text>
+        <text class="service-text">个性化健康指导</text>
+      </view>
     </view>
   </view>
 

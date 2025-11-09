@@ -42,11 +42,7 @@
       <text class="menu-text">我的订单</text>
       <view class="menu-arrow">></view>
     </view>
-    <view class="menu-item" bindtap="viewAbout">
-      <view class="menu-icon">ℹ️</view>
-      <text class="menu-text">关于我们</text>
-      <view class="menu-arrow">></view>
-    </view>
+    <!-- 删除关于我们入口 -->
   </view>
 
   <!-- 退出登录 -->

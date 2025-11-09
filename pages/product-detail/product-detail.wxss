@@ -63,13 +63,7 @@
     color: #ff6b6b;
   }
   
-  .original-price {
-    font-size: 24rpx;
-    color: #999;
-    text-decoration: line-through;
-  }
-  
-  .detail-section, .features-section {
+  .detail-section, .features-section, .value-section, .service-section {
     background: white;
     border-radius: 20rpx;
     padding: 40rpx;
@@ -82,40 +76,14 @@
     font-size: 32rpx;
     font-weight: 600;
     color: #333;
-    margin-bottom: 30rpx;
+    margin-bottom: 24rpx;
   }
   
-  .detail-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20rpx;
-  }
-  
-  .detail-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20rpx 0;
-    border-bottom: 1rpx solid #f0f0f0;
-  }
-  
-  .detail-item:last-child {
-    border-bottom: none;
-  }
-  
-  .detail-label {
-    font-size: 28rpx;
-    color: #333;
-    font-weight: 500;
-    min-width: 160rpx;
-  }
-  
-  .detail-value {
+  .suitable-content {
+    display: block;
     font-size: 26rpx;
     color: #666;
     line-height: 1.5;
-    flex: 1;
-    text-align: right;
   }
   
   .features-list {
@@ -141,6 +109,70 @@
     color: #666;
     line-height: 1.5;
     flex: 1;
+  }
+  
+  .value-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24rpx;
+  }
+  
+  .value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20rpx;
+    padding: 24rpx;
+    background: #f8f9fa;
+    border-radius: 12rpx;
+  }
+  
+  .value-icon {
+    font-size: 36rpx;
+    margin-top: 4rpx;
+  }
+  
+  .value-content {
+    flex: 1;
+  }
+  
+  .value-title {
+    display: block;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8rpx;
+  }
+  
+  .value-desc {
+    display: block;
+    font-size: 24rpx;
+    color: #666;
+    line-height: 1.4;
+  }
+  
+  .service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+  }
+  
+  .service-item {
+    display: flex;
+    align-items: center;
+    gap: 16rpx;
+    padding: 20rpx;
+    background: #f0f8ff;
+    border-radius: 12rpx;
+    border-left: 4rpx solid #1a73e8;
+  }
+  
+  .service-icon {
+    font-size: 28rpx;
+  }
+  
+  .service-text {
+    font-size: 26rpx;
+    color: #333;
   }
   
   .action-bar {
